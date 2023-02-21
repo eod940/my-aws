@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
-my_fastapi_app = FastAPI()
+app = FastAPI()
 
 
-@my_fastapi_app.get("/")
+@app.get("/")
 def root():
-	return {"Hello~~"}
+	return {"Hello~~Hello~~Hello~~Hello~~": "no"}
