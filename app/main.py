@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from starlette.responses import JSONResponse
 
 app = FastAPI()
+global dicted_item
 
 
 class Item(BaseModel):
@@ -19,12 +20,11 @@ def root():
 
 @app.get("/items/{item_id}")
 def item(item_id: int):
-    return {"item_id: ": item_id}
+	return {"item_id: ": item_id}
 
 
 @app.post("/register")
 def register_item(item: Item):
-	global dicted_item
 	dicted_item: dict[str, bool] = dict(item)
 	dicted_item['success'] = True
 	
